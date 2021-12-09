@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylibExtras-cs", "raylibExtras-cs\raylibExtras-cs.csproj", "{2518B5BD-65DA-451C-AB9D-5D54C3320322}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rlFPCamera_sample", "samples\rlFPCamera_sample\rlFPCamera_sample.csproj", "{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2518B5BD-65DA-451C-AB9D-5D54C3320322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2518B5BD-65DA-451C-AB9D-5D54C3320322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2518B5BD-65DA-451C-AB9D-5D54C3320322}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2518B5BD-65DA-451C-AB9D-5D54C3320322}.Debug|x64.Build.0 = Debug|Any CPU
+		{2518B5BD-65DA-451C-AB9D-5D54C3320322}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2518B5BD-65DA-451C-AB9D-5D54C3320322}.Debug|x86.Build.0 = Debug|Any CPU
+		{2518B5BD-65DA-451C-AB9D-5D54C3320322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2518B5BD-65DA-451C-AB9D-5D54C3320322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2518B5BD-65DA-451C-AB9D-5D54C3320322}.Release|x64.ActiveCfg = Release|Any CPU
+		{2518B5BD-65DA-451C-AB9D-5D54C3320322}.Release|x64.Build.0 = Release|Any CPU
+		{2518B5BD-65DA-451C-AB9D-5D54C3320322}.Release|x86.ActiveCfg = Release|Any CPU
+		{2518B5BD-65DA-451C-AB9D-5D54C3320322}.Release|x86.Build.0 = Release|Any CPU
+		{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}.Debug|x64.Build.0 = Debug|Any CPU
+		{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}.Debug|x86.Build.0 = Debug|Any CPU
+		{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}.Release|x64.ActiveCfg = Release|Any CPU
+		{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}.Release|x64.Build.0 = Release|Any CPU
+		{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}.Release|x86.ActiveCfg = Release|Any CPU
+		{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D218759D-F38C-4D91-BF12-90897E8D57CD}
+	EndGlobalSection
+EndGlobal
