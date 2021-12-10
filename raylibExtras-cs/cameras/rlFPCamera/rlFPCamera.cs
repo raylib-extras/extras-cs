@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
-
 using Raylib_cs;
+
 namespace raylibExtras
 {
     public class rlFPCamera
@@ -265,43 +265,41 @@ namespace raylibExtras
         // start drawing using the camera, with near/far plane support
         public void BeginMode3D()
         {
-            Raylib.BeginMode3D(Camera);
-//             float aspect = (float)Raylib.GetScreenWidth() / (float)Raylib.GetScreenHeight();
-// 
-//             Rlgl.rlDrawRenderBatchActive();          // Draw Buffers (Only OpenGL 3+ and ES2)
-//             Rlgl.rlMatrixMode(Rlgl.RL_PROJECTION);        // Switch to projection matrix
-//             Rlgl.rlPushMatrix();                     // Save previous matrix, which contains the settings for the 2d ortho projection
-//             Rlgl.rlLoadIdentity();                   // Reset current matrix (projection)
-// 
-//             if (ViewCamera.projection == CameraProjection.CAMERA_PERSPECTIVE)
-//             {
-//                 // Setup perspective projection
-//                 double top = Rlgl.RL_CULL_DISTANCE_NEAR * System.MathF.Tan(ViewCamera.fovy * 0.5f * (MathF.PI / 180.0f));
-//                 double right = top * aspect;
-// 
-//                 Rlgl.rlFrustum(-right, right, -top, top, NearPlane, FarPlane);
-//             }
-//             else if (ViewCamera.projection == CameraProjection.CAMERA_ORTHOGRAPHIC)
-//             {
-//                 // Setup orthographic projection
-//                 double top = ViewCamera.fovy / 2.0;
-//                 double right = top * aspect;
-// 
-//                 Rlgl.rlOrtho(-right, right, -top, top, NearPlane, FarPlane);
-//             }
-// 
-//             // NOTE: zNear and zFar values are important when computing depth buffer values
-// 
-//             Rlgl.rlMatrixMode(Rlgl.RL_MODELVIEW);         // Switch back to modelview matrix
-//             Rlgl.rlLoadIdentity();                   // Reset current matrix (modelview)
-// 
-//             // Setup Camera view
-//             Matrix4x4 matView = Raymath.MatrixLookAt(ViewCamera.position, ViewCamera.target, ViewCamera.up);
-// 
-//             // TODO, fix this!
-//             float[] mat = rlMathUtils.MatrixToBuffer(matView);
-//             Rlgl.rlMultMatrixf(ref mat);      // Multiply modelview matrix by view matrix (camera)
-// 
+            float aspect = (float)Raylib.GetScreenWidth() / (float)Raylib.GetScreenHeight();
+
+            Rlgl.rlDrawRenderBatchActive();           // Draw Buffers (Only OpenGL 3+ and ES2)
+            Rlgl.rlMatrixMode(MatrixMode.PROJECTION); // Switch to projection matrix
+            Rlgl.rlPushMatrix();                      // Save previous matrix, which contains the settings for the 2d ortho projection
+            Rlgl.rlLoadIdentity();                    // Reset current matrix (projection)
+
+            if (ViewCamera.projection == CameraProjection.CAMERA_PERSPECTIVE)
+            {
+                // Setup perspective projection
+                double top = Rlgl.RL_CULL_DISTANCE_NEAR * System.MathF.Tan(ViewCamera.fovy * 0.5f * (MathF.PI / 180.0f));
+                double right = top * aspect;
+
+                Rlgl.rlFrustum(-right, right, -top, top, NearPlane, FarPlane);
+            }
+            else if (ViewCamera.projection == CameraProjection.CAMERA_ORTHOGRAPHIC)
+            {
+                // Setup orthographic projection
+                double top = ViewCamera.fovy / 2.0;
+                double right = top * aspect;
+
+                Rlgl.rlOrtho(-right, right, -top, top, NearPlane, FarPlane);
+            }
+
+            // NOTE: zNear and zFar values are important when computing depth buffer values
+
+            Rlgl.rlMatrixMode(MatrixMode.MODELVIEW); // Switch back to modelview matrix
+            Rlgl.rlLoadIdentity();                   // Reset current matrix (modelview)
+
+            // Setup Camera view
+            Matrix4x4 matView = Raymath.MatrixLookAt(ViewCamera.position, ViewCamera.target, ViewCamera.up);
+
+            Rlgl.rlMultMatrixf(matView);      // Multiply modelview matrix by view matrix (camera)
+
+            Rlgl.rlEnableDepthTest();    // Enable DEPTH_TEST for 3D
 //             Rlgl.rlEnableDepthTest();                // Enable DEPTH_TEST for 3D
         }
 
