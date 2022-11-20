@@ -44,6 +44,8 @@ namespace raylibExtras
         public bool UseMouseX = true;
         public bool UseMouseY = true;
 
+        public bool InvertY = false;
+
         public bool UseKeyboard = true;
 
         public bool UseController = true;
@@ -190,15 +192,17 @@ namespace raylibExtras
             float turnRotation = GetSpeedForAxis(CameraControls.TURN_RIGHT, TurnSpeed.X) - GetSpeedForAxis(CameraControls.TURN_LEFT, TurnSpeed.X);
             float tiltRotation = GetSpeedForAxis(CameraControls.TURN_UP, TurnSpeed.Y) - GetSpeedForAxis(CameraControls.TURN_DOWN, TurnSpeed.Y);
 
+            float yFactor = InvertY ? -1 : 1;
+
             if (turnRotation != 0)
                 Angle.X -= turnRotation * (MathF.PI/180.0f);
             else if (UseMouseX && Focused)
                 Angle.X += (mousePositionDelta.X / -MouseSensitivity);
 
             if (tiltRotation != 0)
-                Angle.Y += tiltRotation * (MathF.PI / 180.0f);
+                Angle.Y += yFactor * tiltRotation * (MathF.PI / 180.0f);
             else if (UseMouseY && Focused)
-                Angle.Y += (mousePositionDelta.Y / -MouseSensitivity);
+                Angle.Y += (yFactor * mousePositionDelta.Y / -MouseSensitivity);
 
             // Angle clamp
             if (Angle.Y < MinimumViewY * (MathF.PI / 180.0f))
