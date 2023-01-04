@@ -211,7 +211,7 @@ namespace raylibExtras
                 Angle.Y = MaximumViewY * (MathF.PI / 180.0f);
 
             // Recalculate camera target considering translation and rotation
-            Vector3 target = Raymath.Vector3Transform(new Vector3( 0, 0, 1 ), Raymath.MatrixRotateXYZ(new Vector3(Angle.Y, -Angle.X, 0 )));
+            Vector3 target = Raymath.Vector3Transform(new Vector3( 0, 0, 1 ), Raymath.MatrixRotateZYX(new Vector3(-Angle.Y, Angle.X, 0 )));
 
             ViewCamera.position = CameraPosition;
 
